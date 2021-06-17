@@ -1,0 +1,10 @@
+D:\Personal-Work-Space\C# Project\regular_expressions_practice\bin\Debug\regular_expressions_practice.exe.config
+D:\Personal-Work-Space\C# Project\regular_expressions_practice\bin\Debug\regular_expressions_practice.exe
+D:\Personal-Work-Space\C# Project\regular_expressions_practice\bin\Debug\regular_expressions_practice.pdb
+D:\Personal-Work-Space\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.csproj.AssemblyReference.cache
+D:\Personal-Work-Space\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.Form1.resources
+D:\Personal-Work-Space\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.Properties.Resources.resources
+D:\Personal-Work-Space\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.csproj.GenerateResource.cache
+D:\Personal-Work-Space\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.csproj.CoreCompileInputs.cache
+D:\Personal-Work-Space\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.exe
+D:\Personal-Work-Space\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.pdb
