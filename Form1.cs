@@ -16,5 +16,21 @@ namespace regular_expressions_practice
         {
             InitializeComponent();
         }
+
+        private void btn_Identification_Test_Click(object sender, EventArgs e)
+        {
+            string ans = lbl_Identification.Text;
+
+        }
+
+        private void btn_Password_Test_Click(object sender, EventArgs e)
+        {
+            string ans = lbl_Password.Text;
+        }
+
+        private void btn_Email_Test_Click(object sender, EventArgs e)
+        {
+            string ans = lbl_Email.Text;
+        }
     }
 }
