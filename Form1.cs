@@ -95,12 +95,14 @@ namespace regular_expressions_practice
                 {
                     content = streamReader.ReadToEnd();
                 }
-                string[] line = content.Split('\n');
+                MatchCollection matchCollection1 = Regex.Matches(content, @"<h4>.*");
+                // MatchCollection matchCollection2 = Regex.Matches(content, @"<div class=[""]fl_txt[""].*>$");
                 using (StreamWriter streamWriter = new StreamWriter(write_path))
                 {
-                    foreach (string item in line)
+                    for (int i = 0; i < matchCollection1.Count; i++)
                     {
-                        streamWriter.WriteLine(item);
+                        //streamWriter.WriteLine($"{matchCollection1[i].ToString()}{Environment.NewLine}");
+                        //streamWriter.WriteLine($"{matchCollection1[i].ToString()}{Environment.NewLine}{matchCollection2[i].ToString()}");
                     }
                 }
             }
@@ -126,14 +128,29 @@ namespace regular_expressions_practice
                 {
                     content = streamReader.ReadToEnd();
                 }
-                string[] line = content.Split('\n');
-                using (StreamWriter streamWriter = new StreamWriter(write_path))
-                {
-                    foreach (string item in line)
-                    {
-                        streamWriter.WriteLine(item);
-                    }
+                /////內容整理 (還須修改)
+                //MatchCollection matchCollection_content = Regex.Matches(content, @"<td[^>]*?>[^<]*<\/td>");
+                //using (StreamWriter streamWriter = new StreamWriter(write_path))
+                //{
+                //    foreach (var item in matchCollection_content)
+                //    {
+                //        string value = Regex.Replace(Regex.Replace(Regex.Replace(item.ToString(), @"<td[^>]*?>", string.Empty), @"<\/td>", string.Empty), @"&nbsp;", string.Empty);
+                //        streamWriter.WriteLine($"{value}");
+                //    }
                 }
+
+                ////整理欄位 (還須修改)
+                //MatchCollection matchCollection_title = Regex.Matches(content, @"<th[^>]*?>(.*)<\/th>");
+                //string[] column = Regex.Replace(Regex.Replace(matchCollection_title[0].ToString(), @"<th[^>]*?>", " "), @"<\/th>", " ").Split(' ');
+
+                ////string[] line = content.Split('\n');
+                //using (StreamWriter streamWriter = new StreamWriter(write_path))
+                //{
+                //    foreach (var item in column)
+                //    {
+                //        streamWriter.WriteLine($"{item}");
+                //    }
+                //}
             }
         }
 
