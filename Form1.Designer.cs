@@ -36,8 +36,8 @@ namespace regular_expressions_practice
             this.lbl_Email = new System.Windows.Forms.Label();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.btn_Q4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Q5 = new System.Windows.Forms.Button();
+            this.btn_Q6 = new System.Windows.Forms.Button();
             this.btn_Identification_Test = new System.Windows.Forms.Button();
             this.btn_Password_Test = new System.Windows.Forms.Button();
             this.btn_Email_Test = new System.Windows.Forms.Button();
@@ -105,27 +105,27 @@ namespace regular_expressions_practice
             this.btn_Q4.UseVisualStyleBackColor = true;
             this.btn_Q4.Click += new System.EventHandler(this.btn_Q4_Click);
             // 
-            // button1
+            // btn_Q5
             // 
-            this.button1.Location = new System.Drawing.Point(13, 298);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 22);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "btn_Q5 (DataTable)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Q5.Location = new System.Drawing.Point(13, 298);
+            this.btn_Q5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Q5.Name = "btn_Q5";
+            this.btn_Q5.Size = new System.Drawing.Size(125, 22);
+            this.btn_Q5.TabIndex = 7;
+            this.btn_Q5.Text = "btn_Q5 (DataTable)";
+            this.btn_Q5.UseVisualStyleBackColor = true;
+            this.btn_Q5.Click += new System.EventHandler(this.btn_Q5_Click);
             // 
-            // button2
+            // btn_Q6
             // 
-            this.button2.Location = new System.Drawing.Point(13, 338);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 22);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "btn_Q6 (Sort)";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Q6.Location = new System.Drawing.Point(13, 338);
+            this.btn_Q6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Q6.Name = "btn_Q6";
+            this.btn_Q6.Size = new System.Drawing.Size(125, 22);
+            this.btn_Q6.TabIndex = 8;
+            this.btn_Q6.Text = "btn_Q6 (Sort)";
+            this.btn_Q6.UseVisualStyleBackColor = true;
+            this.btn_Q6.Click += new System.EventHandler(this.btn_Q6_Click);
             // 
             // btn_Identification_Test
             // 
@@ -168,8 +168,8 @@ namespace regular_expressions_practice
             this.Controls.Add(this.btn_Email_Test);
             this.Controls.Add(this.btn_Password_Test);
             this.Controls.Add(this.btn_Identification_Test);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Q6);
+            this.Controls.Add(this.btn_Q5);
             this.Controls.Add(this.btn_Q4);
             this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.lbl_Email);
@@ -194,8 +194,8 @@ namespace regular_expressions_practice
         private System.Windows.Forms.Label lbl_Email;
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Button btn_Q4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Q5;
+        private System.Windows.Forms.Button btn_Q6;
         private System.Windows.Forms.Button btn_Identification_Test;
         private System.Windows.Forms.Button btn_Password_Test;
         private System.Windows.Forms.Button btn_Email_Test;

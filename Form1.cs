@@ -26,13 +26,16 @@ namespace regular_expressions_practice
         /// <param name="e"></param>
         private void btn_Email_Test_Click(object sender, EventArgs e)
         {
-            string input = lbl_Email.Text;
-            MatchCollection matchCollection = Regex.Matches(input, @"");
-            if (matchCollection != null)
+            string input = txt_Email.Text;
+            MatchCollection matchCollection = Regex.Matches(input, @"([a-z]*_[a-z]*)@cmoney.com.tw|([a-z]*_[a-z]*)@cmoney.asia");
+
+            if (matchCollection != null) //解決空白輸入的問題
             {
-                foreach (var item in matchCollection)
-                {
-                }
+                MessageBox.Show(matchCollection[0].ToString().Split('@')[0]);
+            }
+            else
+            {
+                MessageBox.Show("輸入錯誤，請重新輸入!");
             }
         }
 
@@ -79,7 +82,9 @@ namespace regular_expressions_practice
         /// <param name="e"></param>
         private void btn_Q4_Click(object sender, EventArgs e)
         {
+            string content;
             string path = @"D:\Personal-Work-Space\C# Project\regular_expressions_practice\Q4.htm";
+            string write_path = @"D:\Personal-Work-Space\C# Project\regular_expressions_practice\ans4.txt";
             if (!File.Exists(path))
             {
                 MessageBox.Show("檔案不存在!");
@@ -88,7 +93,15 @@ namespace regular_expressions_practice
             {
                 using (StreamReader streamReader = new StreamReader(path, Encoding.UTF8))
                 {
-                    string content = streamReader.ReadToEnd();
+                    content = streamReader.ReadToEnd();
+                }
+                string[] line = content.Split('\n');
+                using (StreamWriter streamWriter = new StreamWriter(write_path))
+                {
+                    foreach (string item in line)
+                    {
+                        streamWriter.WriteLine(item);
+                    }
                 }
             }
         }
@@ -98,9 +111,11 @@ namespace regular_expressions_practice
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Q5_Click(object sender, EventArgs e)
         {
+            string content;
             string path = @"D:\Personal-Work-Space\C# Project\regular_expressions_practice\Q5.htm";
+            string write_path = @"D:\Personal-Work-Space\C# Project\regular_expressions_practice\ans5.txt";
             if (!File.Exists(path))
             {
                 MessageBox.Show("檔案不存在!");
@@ -109,7 +124,15 @@ namespace regular_expressions_practice
             {
                 using (StreamReader streamReader = new StreamReader(path, Encoding.UTF8))
                 {
-                    string content = streamReader.ReadToEnd();
+                    content = streamReader.ReadToEnd();
+                }
+                string[] line = content.Split('\n');
+                using (StreamWriter streamWriter = new StreamWriter(write_path))
+                {
+                    foreach (string item in line)
+                    {
+                        streamWriter.WriteLine(item);
+                    }
                 }
             }
         }
@@ -119,10 +142,11 @@ namespace regular_expressions_practice
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_Q6_Click(object sender, EventArgs e)
         {
+            string content;
             string path = @"D:\Personal-Work-Space\C# Project\regular_expressions_practice\Q6.htm";
-
+            string write_path = @"D:\Personal-Work-Space\C# Project\regular_expressions_practice\ans6.txt";
             if (!File.Exists(path))
             {
                 MessageBox.Show("檔案不存在!");
@@ -131,7 +155,15 @@ namespace regular_expressions_practice
             {
                 using (StreamReader streamReader = new StreamReader(path, Encoding.UTF8))
                 {
-                    string content = streamReader.ReadToEnd();
+                    content = streamReader.ReadToEnd();
+                }
+                string[] line = content.Split('\n');
+                using (StreamWriter streamWriter = new StreamWriter(write_path))
+                {
+                    foreach (string item in line)
+                    {
+                        streamWriter.WriteLine(item);
+                    }
                 }
             }
         }
