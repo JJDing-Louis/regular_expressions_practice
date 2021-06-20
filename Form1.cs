@@ -91,14 +91,16 @@ namespace regular_expressions_practice
                 {
                     content = streamReader.ReadToEnd();
                 }
-                MatchCollection matchCollection1 = Regex.Matches(content, @"<h4>.*");
-                MatchCollection matchCollection2 = Regex.Matches(content, @"<div class=[""]fl_txt[""].*>$");
+                MatchCollection matchCollection1 = Regex.Matches(content, @"<h4>.*<\/h4>");
+                MatchCollection matchCollection2 = Regex.Matches(content, @"<div[^>]*?><p>.*<\/p><\/div>");
+
                 using (StreamWriter streamWriter = new StreamWriter(write_path))
                 {
                     for (int i = 0; i < matchCollection1.Count; i++)
                     {
-                        //streamWriter.WriteLine($"{matchCollection1[i].ToString()}{Environment.NewLine}");
-                        //streamWriter.WriteLine($"{matchCollection1[i].ToString()}{Environment.NewLine}{matchCollection2[i].ToString()}");
+                        streamWriter.WriteLine($"{Regex.Replace(Regex.Replace(matchCollection1[i].ToString(), @"<h4>", string.Empty), @"<\/h4>", string.Empty).ToString()}" +
+                            $"{Environment.NewLine}" +
+                            $"{Regex.Replace(Regex.Replace(Regex.Replace(Regex.Replace(matchCollection2[i + 1].ToString(), @"<div[^>]*?><p>", string.Empty), @"<\/p><\/div>", string.Empty), @"&nbsp;", string.Empty), @",", string.Empty).ToString()}");
                     }
                 }
             }
