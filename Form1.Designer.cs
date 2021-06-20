@@ -41,6 +41,8 @@ namespace regular_expressions_practice
             this.btn_Identification_Test = new System.Windows.Forms.Button();
             this.btn_Password_Test = new System.Windows.Forms.Button();
             this.btn_Email_Test = new System.Windows.Forms.Button();
+            this.dGV_Q5 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_Q5)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Identification
@@ -160,11 +162,22 @@ namespace regular_expressions_practice
             this.btn_Email_Test.UseVisualStyleBackColor = true;
             this.btn_Email_Test.Click += new System.EventHandler(this.btn_Email_Test_Click);
             // 
+            // dGV_Q5
+            // 
+            this.dGV_Q5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_Q5.Location = new System.Drawing.Point(548, 12);
+            this.dGV_Q5.Name = "dGV_Q5";
+            this.dGV_Q5.RowHeadersWidth = 51;
+            this.dGV_Q5.RowTemplate.Height = 27;
+            this.dGV_Q5.Size = new System.Drawing.Size(727, 426);
+            this.dGV_Q5.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1287, 450);
+            this.Controls.Add(this.dGV_Q5);
             this.Controls.Add(this.btn_Email_Test);
             this.Controls.Add(this.btn_Password_Test);
             this.Controls.Add(this.btn_Identification_Test);
@@ -180,6 +193,7 @@ namespace regular_expressions_practice
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_Q5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,6 +213,7 @@ namespace regular_expressions_practice
         private System.Windows.Forms.Button btn_Identification_Test;
         private System.Windows.Forms.Button btn_Password_Test;
         private System.Windows.Forms.Button btn_Email_Test;
+        private System.Windows.Forms.DataGridView dGV_Q5;
     }
 }
 

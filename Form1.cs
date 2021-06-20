@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace regular_expressions_practice
@@ -96,7 +92,7 @@ namespace regular_expressions_practice
                     content = streamReader.ReadToEnd();
                 }
                 MatchCollection matchCollection1 = Regex.Matches(content, @"<h4>.*");
-                // MatchCollection matchCollection2 = Regex.Matches(content, @"<div class=[""]fl_txt[""].*>$");
+                MatchCollection matchCollection2 = Regex.Matches(content, @"<div class=[""]fl_txt[""].*>$");
                 using (StreamWriter streamWriter = new StreamWriter(write_path))
                 {
                     for (int i = 0; i < matchCollection1.Count; i++)
@@ -128,34 +124,37 @@ namespace regular_expressions_practice
                 {
                     content = streamReader.ReadToEnd();
                 }
-                /////內容整理 (還須修改)
-                //MatchCollection matchCollection_content = Regex.Matches(content, @"<td[^>]*?>[^<]*<\/td>");
-                //using (StreamWriter streamWriter = new StreamWriter(write_path))
-                //{
-                //    foreach (var item in matchCollection_content)
-                //    {
-                //        string value = Regex.Replace(Regex.Replace(Regex.Replace(item.ToString(), @"<td[^>]*?>", string.Empty), @"<\/td>", string.Empty), @"&nbsp;", string.Empty);
-                //        streamWriter.WriteLine($"{value}");
-                //    }
+                //建立DataTable
+                DataTable dataTable = new DataTable("Q5_Data");
+
+                //整理欄位 (還須修改)
+                MatchCollection matchCollection_title = Regex.Matches(content, @"<th[^>]*?>(.*)<\/th>");
+                string[] column = Regex.Replace(Regex.Replace(matchCollection_title[0].ToString(), @"<th[^>]*?>", " "), @"<\/th>", " ").Split(' ');
+
+                foreach (var item in column)
+                {
+                    dataTable.Columns.Add(item);
                 }
 
-                ////整理欄位 (還須修改)
-                //MatchCollection matchCollection_title = Regex.Matches(content, @"<th[^>]*?>(.*)<\/th>");
-                //string[] column = Regex.Replace(Regex.Replace(matchCollection_title[0].ToString(), @"<th[^>]*?>", " "), @"<\/th>", " ").Split(' ');
+                ///內容整理 (還須修改)
+                MatchCollection matchCollection_content = Regex.Matches(content, @"<td[^>]*?>[^<]*<\/td>");
 
-                ////string[] line = content.Split('\n');
-                //using (StreamWriter streamWriter = new StreamWriter(write_path))
-                //{
-                //    foreach (var item in column)
-                //    {
-                //        streamWriter.WriteLine($"{item}");
-                //    }
-                //}
+                for (int i = 0; i < (matchCollection_content.Count) / 17; i++)
+                {
+                    List<string> content_list = new List<string>();
+                    for (int j = 0; j < 17; j++)
+                    {
+                        content_list.Add(Regex.Replace(Regex.Replace(Regex.Replace(matchCollection_content[i * 17 + j].ToString(), @"<td[^>]*?>", string.Empty), @"<\/td>", string.Empty), @"&nbsp;", string.Empty));
+                    }
+                    dataTable.Rows.Add(content_list);
+                }
+
+                dGV_Q5.DataSource = dataTable;
             }
         }
 
         /// <summary>
-        ///
+        ///Q6取得所有分類
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -174,12 +173,15 @@ namespace regular_expressions_practice
                 {
                     content = streamReader.ReadToEnd();
                 }
-                string[] line = content.Split('\n');
+
                 using (StreamWriter streamWriter = new StreamWriter(write_path))
                 {
-                    foreach (string item in line)
+                    MatchCollection matchCollection = Regex.Matches(content, @"<option[^>]*?>[^<]*<\/option>");
+
+                    for (int i = 60; i < matchCollection.Count; i++)
                     {
-                        streamWriter.WriteLine(item);
+                        string value = Regex.Replace(Regex.Replace(matchCollection[i].ToString(), @"<option[^>]*?>", string.Empty), @"<\/option>", string.Empty);
+                        streamWriter.WriteLine(value);
                     }
                 }
             }
