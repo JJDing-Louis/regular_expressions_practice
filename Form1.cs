@@ -24,8 +24,7 @@ namespace regular_expressions_practice
         {
             string input = txt_Email.Text;
             MatchCollection matchCollection = Regex.Matches(input, @"([a-z]*_[a-z]*)@cmoney.com.tw|([a-z]*_[a-z]*)@cmoney.asia");
-
-            if (matchCollection != null) //解決空白輸入的問題
+            if (matchCollection.Count != 0)
             {
                 MessageBox.Show(matchCollection[0].ToString().Split('@')[0]);
             }
