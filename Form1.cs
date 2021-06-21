@@ -79,8 +79,8 @@ namespace regular_expressions_practice
         private void btn_Q4_Click(object sender, EventArgs e)
         {
             string content;
-            string path = @"D:\Personal-Work-Space\C# Project\regular_expressions_practice\Q4.htm";
-            string write_path = @"D:\Personal-Work-Space\C# Project\regular_expressions_practice\ans4.txt";
+            string path = @"D:\Software(Program)\C# Project\regular_expressions_practice\Q4.htm";
+            string write_path = @"D:\Software(Program)\C# Project\regular_expressions_practice\ans4.txt";
             if (!File.Exists(path))
             {
                 MessageBox.Show("檔案不存在!");
@@ -94,15 +94,23 @@ namespace regular_expressions_practice
                 MatchCollection matchCollection1 = Regex.Matches(content, @"<h4>.*<\/h4>");
                 MatchCollection matchCollection2 = Regex.Matches(content, @"<div[^>]*?><p>.*<\/p><\/div>");
 
-                using (StreamWriter streamWriter = new StreamWriter(write_path))
-                {
-                    for (int i = 0; i < matchCollection1.Count; i++)
-                    {
-                        streamWriter.WriteLine($"{Regex.Replace(Regex.Replace(matchCollection1[i].ToString(), @"<h4>", string.Empty), @"<\/h4>", string.Empty).ToString()}" +
-                            $"{Environment.NewLine}" +
-                            $"{Regex.Replace(Regex.Replace(Regex.Replace(Regex.Replace(matchCollection2[i + 1].ToString(), @"<div[^>]*?><p>", string.Empty), @"<\/p><\/div>", string.Empty), @"&nbsp;", string.Empty), @",", string.Empty).ToString()}");
-                    }
-                }
+                //using (StreamWriter streamWriter = new StreamWriter(write_path))
+                //{
+                //    for (int i = 0; i < matchCollection1.Count; i++)
+                //    {
+                //        streamWriter.WriteLine($"{Regex.Replace(Regex.Replace(matchCollection1[i].ToString(), @"<h4>", string.Empty), @"<\/h4>", string.Empty).ToString()}" +
+                //            $"{Environment.NewLine}" +
+                //            $"{Regex.Replace(Regex.Replace(Regex.Replace(Regex.Replace(matchCollection2[i + 1].ToString(), @"<div[^>]*?><p>", string.Empty), @"<\/p><\/div>", string.Empty), @"&nbsp;", string.Empty), @",", string.Empty).ToString()}");
+                //    }
+                //}
+                string content_txt = string.Empty;
+               for (int i = 0; i < matchCollection1.Count; i++)
+               {
+                   content_txt += $"{Regex.Replace(Regex.Replace(matchCollection1[i].ToString(), @"<h4>", string.Empty), @"<\/h4>", string.Empty).ToString()}" +
+                       $"{Environment.NewLine}" +
+                       $"{Regex.Replace(Regex.Replace(Regex.Replace(Regex.Replace(matchCollection2[i + 1].ToString(), @"<div[^>]*?><p>", string.Empty), @"<\/p><\/div>", string.Empty), @"&nbsp;", string.Empty), @",", string.Empty).ToString()}";
+               }
+                rTB_Q4.Text = content_txt;
             }
         }
 

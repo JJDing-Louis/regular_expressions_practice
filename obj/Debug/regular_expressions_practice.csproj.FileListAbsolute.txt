@@ -8,3 +8,13 @@ D:\Personal-Work-Space\C# Project\regular_expressions_practice\obj\Debug\regular
 D:\Personal-Work-Space\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.csproj.CoreCompileInputs.cache
 D:\Personal-Work-Space\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.exe
 D:\Personal-Work-Space\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.pdb
+D:\Software(Program)\C# Project\regular_expressions_practice\bin\Debug\regular_expressions_practice.exe.config
+D:\Software(Program)\C# Project\regular_expressions_practice\bin\Debug\regular_expressions_practice.exe
+D:\Software(Program)\C# Project\regular_expressions_practice\bin\Debug\regular_expressions_practice.pdb
+D:\Software(Program)\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.csprojAssemblyReference.cache
+D:\Software(Program)\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.Form1.resources
+D:\Software(Program)\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.Properties.Resources.resources
+D:\Software(Program)\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.csproj.GenerateResource.cache
+D:\Software(Program)\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.csproj.CoreCompileInputs.cache
+D:\Software(Program)\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.exe
+D:\Software(Program)\C# Project\regular_expressions_practice\obj\Debug\regular_expressions_practice.pdb
